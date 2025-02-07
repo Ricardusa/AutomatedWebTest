@@ -21,6 +21,14 @@ public class JavaScriptUtility extends Utility{
         executor.executeScript("arguments[0].click();", element);
     }
 
+    //clear input from text field
+    public static void clearInput(By locator){
+        WebElement element = driver.findElement(locator);
+        String jsScript = "arguments[0].value = '';";
+        ((JavascriptExecutor)driver).executeScript(jsScript, element);
+    }
+
+
 
 
 

@@ -5,14 +5,14 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import part3_4.com.demoqa.base.BaseTest;
 
+import static com.base.BasePage.delay;
+
 public class CheckBoxTest extends BaseTest {
 
 
     @Test
     public void testCheckbox(){
         var formsPage = homePage.goToForms().clickPracticeForm();
-
-        formsPage.setFirstAndLastName("Ricardo", "Rivas");
 
         formsPage.clickSportsCheckbox();
         formsPage.clickMusicCheckbox();

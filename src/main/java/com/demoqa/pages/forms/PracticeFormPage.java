@@ -3,18 +3,21 @@ package com.demoqa.pages.forms;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import static ultilities.JavaScriptUtility.clickJS;
-import static ultilities.JavaScriptUtility.scrollToElementJS;
+import static ultilities.JavaScriptUtility.*;
 
 //one we click on the practice form we can now mess around with the form
 public class PracticeFormPage extends FormsPage{
 
     private By firstName = By.id("firstName");
     private By lastName = By.id("lastName");
+    private By email = By.id("userEmail");
+    private By mobileNum = By.id("userNumber");
     private By femaleRadioButton = By.id("gender-radio-2");
     private By sportsHobbyCheckbox = By.id("hobbies-checkbox-1");
     private By readingHobbyCheckbox = By.id("hobbies-checkbox-2");
     private By musicHobbyCheckbox = By.id("hobbies-checkbox-3");
+    //private By dateOfBirthInput = By.id("dateOfBirthInput");
+    private By submitButton = By.id("submit");
 
     //TODO: REMOVE THIS
     public void setFirstAndLastName(String setFirstName, String setLastname){
@@ -22,6 +25,16 @@ public class PracticeFormPage extends FormsPage{
         WebElement lastNameField = find(lastName);
         firstNameField.sendKeys(setFirstName);
         lastNameField.sendKeys(setLastname);
+    }
+
+    public void setEmail(String setEmail){
+        WebElement emailField = find(email);
+        emailField.sendKeys(setEmail);
+    }
+
+    public void setNumber(String setNum){
+        WebElement numberField = find(mobileNum);
+        numberField.sendKeys(setNum);
     }
 
     public void clickFemaleRadioButton(){
@@ -70,6 +83,24 @@ public class PracticeFormPage extends FormsPage{
 
     public boolean isReadingCheckboxSelected(){
         return find(readingHobbyCheckbox).isSelected();
+    }
+
+    //TODO: delete - Date of Birth is set as default
+   /* public void setDateOfBirthInput(String setDateOfBirth){
+        WebElement inputDateOfBirth = find(dateOfBirthInput);
+        inputDateOfBirth.sendKeys(setDateOfBirth);
+    }
+
+    public void removeDateOfBirth(){
+        //if(find(dateOfBirthInput).isDisplayed()){
+            scrollToElementJS(dateOfBirthInput);
+            clickJS(dateOfBirthInput);
+            clearInput(dateOfBirthInput);
+        //}
+    }*/
+
+    public void clickSubmitButton(){
+        click(submitButton);
     }
 
 }
