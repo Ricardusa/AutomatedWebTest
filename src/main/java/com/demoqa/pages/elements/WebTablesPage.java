@@ -3,6 +3,7 @@ package com.demoqa.pages.elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+//Website(https://demoqa.com/webtables)
 public class WebTablesPage extends ElementsPage{
 
     private By registrationAgeField = By.id("age");

@@ -9,11 +9,14 @@ public class WebTableTest extends BaseTest {
 
     @Test
     public void testWebTable(){
-        String email = "alden@example.com";
+        String email = "cierra@example.com";
         String expectedAge = "88";
 
         var webTablesPage = homePage.goToElements().clickWebTables();
         webTablesPage.clickEdit(email);
+        webTablesPage.setFirstName("Leo");
+        webTablesPage.setLastName("Lin");
+        webTablesPage.setDepartment("Technology");
         webTablesPage.setAge(expectedAge);
         webTablesPage.clickSubmitButton();
         String actualAge = webTablesPage.getTableAge(email);
