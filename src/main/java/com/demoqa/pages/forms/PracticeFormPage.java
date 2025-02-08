@@ -18,9 +18,11 @@ public class PracticeFormPage extends FormsPage{
     private By musicHobbyCheckbox = By.id("hobbies-checkbox-3");
     //private By dateOfBirthInput = By.id("dateOfBirthInput");
     private By submitButton = By.id("submit");
+    private By formSubmission = By.id("example-modal-sizes-title-lg");
 
     //TODO: REMOVE THIS
     public void setFirstAndLastName(String setFirstName, String setLastname){
+        //set(firstName, setFirstName); same as below
         WebElement firstNameField = find(firstName);
         WebElement lastNameField = find(lastName);
         firstNameField.sendKeys(setFirstName);
@@ -101,6 +103,10 @@ public class PracticeFormPage extends FormsPage{
 
     public void clickSubmitButton(){
         click(submitButton);
+    }
+
+    public boolean isFormSubmissionBeingDisplayed(){
+        return find(formSubmission).isDisplayed();
     }
 
 }

@@ -1,9 +1,10 @@
 package part3_4.com.demoqa.tests.part3.forms;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import part3_4.com.demoqa.base.BaseTest;
 
-public class CompleteForm extends BaseTest {
+public class CompleteFormTest extends BaseTest {
 
 
     @Test
@@ -16,6 +17,8 @@ public class CompleteForm extends BaseTest {
         formsPage.setNumber("1234567890");
         formsPage.clickSportsCheckbox();
         formsPage.clickSubmitButton();
+        Assert.assertTrue(formsPage.isFormSubmissionBeingDisplayed(),
+                "\n Form Submission Failed \n");
 
     }
 

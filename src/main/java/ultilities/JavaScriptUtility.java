@@ -24,7 +24,7 @@ public class JavaScriptUtility extends Utility{
     //clear input from text field
     public static void clearInput(By locator){
         WebElement element = driver.findElement(locator);
-        String jsScript = "arguments[0].value = '';";
+        String jsScript = "arguments[0].value = '';"; //JS clear field
         ((JavascriptExecutor)driver).executeScript(jsScript, element);
     }
 
