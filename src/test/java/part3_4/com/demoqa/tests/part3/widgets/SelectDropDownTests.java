@@ -11,10 +11,10 @@ public class SelectDropDownTests extends BaseTest {
     @Test
     public void testMultiSelectDropDown(){
        var selectMenuPage = homePage.goToWidgets().clickSelectMenu();
-       selectMenuPage.selectStandardMulti("Volvo");
-       selectMenuPage.selectStandardMulti(1);
-       selectMenuPage.selectStandardMulti("Audi");
-       selectMenuPage.selectStandardMulti(2);
+       selectMenuPage.selectStandardMulti("Volvo"); //Visible Text
+       selectMenuPage.selectStandardMulti(1); //Index
+       selectMenuPage.selectStandardMultiByValue("audi"); //Value
+       selectMenuPage.selectStandardMulti(2); 
         //since its by value it has to be lowercase
        selectMenuPage.deselectStandardMulti("volvo");
        //Allows us to search to the list

@@ -15,6 +15,9 @@ public class CompleteFormTest extends BaseTest {
         formsPage.setEmail("test@email.com");
         formsPage.clickFemaleRadioButton();
         formsPage.setNumber("1234567890");
+        formsPage.setDateOfBirthInput("13 Jan 2001");
+        /*formsPage.clickDateOfBirth();
+        formsPage.clickDateDay("28");*/
         formsPage.clickSportsCheckbox();
         formsPage.clickSubmitButton();
         Assert.assertTrue(formsPage.isFormSubmissionBeingDisplayed(),

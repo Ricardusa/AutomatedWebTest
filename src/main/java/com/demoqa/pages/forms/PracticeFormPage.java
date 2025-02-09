@@ -16,7 +16,7 @@ public class PracticeFormPage extends FormsPage{
     private By sportsHobbyCheckbox = By.id("hobbies-checkbox-1");
     private By readingHobbyCheckbox = By.id("hobbies-checkbox-2");
     private By musicHobbyCheckbox = By.id("hobbies-checkbox-3");
-    //private By dateOfBirthInput = By.id("dateOfBirthInput");
+    private By dateOfBirthInput = By.id("dateOfBirthInput");
     private By submitButton = By.id("submit");
     private By formSubmission = By.id("example-modal-sizes-title-lg");
 
@@ -87,19 +87,24 @@ public class PracticeFormPage extends FormsPage{
         return find(readingHobbyCheckbox).isSelected();
     }
 
-    //TODO: delete - Date of Birth is set as default
-   /* public void setDateOfBirthInput(String setDateOfBirth){
-        WebElement inputDateOfBirth = find(dateOfBirthInput);
-        inputDateOfBirth.sendKeys(setDateOfBirth);
+    //TODO: Combine clickDateOfBirth() & clickDateDay() into one method
+    public void clickDateOfBirth(){
+        scrollToElementJS(dateOfBirthInput);
+        click(dateOfBirthInput);
     }
 
-    public void removeDateOfBirth(){
-        //if(find(dateOfBirthInput).isDisplayed()){
-            scrollToElementJS(dateOfBirthInput);
-            clickJS(dateOfBirthInput);
-            clearInput(dateOfBirthInput);
-        //}
-    }*/
+    public void clickDateDay(String day){
+        By clickDay = By.xpath("//div[@id='dateOfBirth']//div[contains(@class, 'react-datepicker__day') and text()='" + day + "']");
+        click(clickDay);
+    }
+
+    public void setDateOfBirthInput(String setDateOfBirth){
+        scrollToElementJS(dateOfBirthInput);
+        click(dateOfBirthInput);
+        clearInput(dateOfBirthInput);
+        delay(1000);
+        set(dateOfBirthInput, setDateOfBirth);
+    }
 
     public void clickSubmitButton(){
         click(submitButton);

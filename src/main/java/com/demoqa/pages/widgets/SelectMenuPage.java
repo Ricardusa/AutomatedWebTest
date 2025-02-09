@@ -24,6 +24,11 @@ public class SelectMenuPage extends WidgetsPage{
         selectByIndex(standardMultiSelect, index);
     }
 
+    public void selectStandardMultiByValue(String value){
+        scrollToElementJS(standardMultiSelect);
+        selectByValue(standardMultiSelect, value);
+    }
+
     public void deselectStandardMulti(String value){
         scrollToElementJS(standardMultiSelect);
         deselectByValue(standardMultiSelect, value);
