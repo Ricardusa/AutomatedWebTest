@@ -19,6 +19,7 @@ public class CompleteFormTest extends BaseTest {
         /*formsPage.clickDateOfBirth();
         formsPage.clickDateDay("28");*/
         formsPage.clickSportsCheckbox();
+        formsPage.uploadFileInput();
         formsPage.clickSubmitButton();
         Assert.assertTrue(formsPage.isFormSubmissionBeingDisplayed(),
                 "\n Form Submission Failed \n");

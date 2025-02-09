@@ -3,6 +3,8 @@ package com.demoqa.pages.forms;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.io.File;
+
 import static ultilities.JavaScriptUtility.*;
 
 //one we click on the practice form we can now mess around with the form
@@ -18,6 +20,8 @@ public class PracticeFormPage extends FormsPage{
     private By musicHobbyCheckbox = By.id("hobbies-checkbox-3");
     private By dateOfBirthInput = By.id("dateOfBirthInput");
     private By submitButton = By.id("submit");
+    private By uploadFileButton = By.id("uploadPicture");
+    private File uploadFile = new File("/home/casio/Pictures/FPL/unai.jpg");
     private By formSubmission = By.id("example-modal-sizes-title-lg");
 
     //TODO: REMOVE THIS
@@ -104,6 +108,13 @@ public class PracticeFormPage extends FormsPage{
         clearInput(dateOfBirthInput);
         delay(1000);
         set(dateOfBirthInput, setDateOfBirth);
+    }
+
+    public void uploadFileInput(){
+        scrollToElementJS(uploadFileButton);
+        //WebElement fileInput = find(uploadFileButton);
+        //fileInput.sendKeys(uploadFile.getAbsolutePath());
+        find(uploadFileButton).sendKeys(uploadFile.getAbsolutePath());
     }
 
     public void clickSubmitButton(){
