@@ -98,6 +98,7 @@ public class PracticeFormPage extends FormsPage{
     }
 
     public void clickDateDay(String day){
+        //TODO: make seperate private method for By.xpath
         By clickDay = By.xpath("//div[@id='dateOfBirth']//div[contains(@class, 'react-datepicker__day') and text()='" + day + "']");
         click(clickDay);
     }
