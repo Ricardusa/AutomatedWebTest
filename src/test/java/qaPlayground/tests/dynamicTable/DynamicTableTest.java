@@ -11,6 +11,7 @@ public class DynamicTableTest extends BaseTest {
     @Test
     public void testFindingSpecificNameWithinTable(){
         var dynamicTablePage = homePage.goToDynamicTablePage();
+
         String expectedNameOfHero = "Peter Parker";
         boolean isHeroPresent = dynamicTablePage.isHeroInTable("Spider-Man", expectedNameOfHero);
         Assert.assertTrue(isHeroPresent, "Spider-Man's real name 'Peter Parker' was not found in the table.");
