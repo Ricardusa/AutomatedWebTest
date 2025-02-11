@@ -37,6 +37,8 @@ public class DropDownUtility extends Utility{
 
     }
 
-
+    public static List<WebElement> findElements(By locator){
+        return driver.findElements(locator);
+    }
 
 }
