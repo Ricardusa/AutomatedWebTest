@@ -10,6 +10,7 @@ public class DateTest extends BaseTest {
     public void testSelectingDate(){
         var datePickerPage = homePage.goToWidgets().clickDatePicker();
         String month = "January";
+        String monthNumber = "01";
         String day = "13";
         String year = "2001";
         datePickerPage.clickSelectDate();
@@ -18,7 +19,10 @@ public class DateTest extends BaseTest {
         datePickerPage.clickDay(day); //clicking the day closes the Date Menu
 
         String actualDate = datePickerPage.getDate();
-        String expectedDate = month + "/" + day + "/" + year;
-        Assert.assertEquals(actualDate, expectedDate);
+        String expectedDate = monthNumber + "/" + day + "/" + year;
+        Assert.assertEquals(actualDate, expectedDate,
+                "\n Actual & Expected Dates Do Not Match" +
+                         "\n Actual Date: " + actualDate +
+                         "\n Expected Date: " + expectedDate);
     }
 }
