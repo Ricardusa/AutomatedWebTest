@@ -14,6 +14,6 @@ public class DynamicTableTest extends BaseTest {
 
         String expectedNameOfHero = "Peter Parker";
         boolean isHeroPresent = dynamicTablePage.isHeroInTable("Spider-Man", expectedNameOfHero);
-        Assert.assertTrue(isHeroPresent, "Spider-Man's real name 'Peter Parker' was not found in the table.");
+        Assert.assertTrue(isHeroPresent, "\n Spider-Man's real name 'Peter Parker' was not found in the table. \n");
     }
 }
