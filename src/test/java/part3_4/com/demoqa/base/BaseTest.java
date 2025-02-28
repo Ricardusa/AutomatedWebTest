@@ -15,6 +15,7 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 
 import static com.base.BasePage.delay;
 import static ultilities.Utility.setUtilityDriver;
@@ -31,6 +32,9 @@ public class BaseTest {
         System.setProperty("webdriver.chrome.driver", "/home/casio/Downloads/chromedriver-linux64/chromedriver");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        //lives through the life of the driver object
+        //and will be applied every time the code uses the driver
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     @BeforeMethod
