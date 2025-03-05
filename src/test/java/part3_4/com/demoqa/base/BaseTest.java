@@ -35,6 +35,8 @@ public class BaseTest {
         //lives through the life of the driver object
         //and will be applied every time the code uses the driver
         //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+        //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
     }
 
     @BeforeMethod
