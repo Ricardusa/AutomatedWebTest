@@ -7,9 +7,6 @@ Automated Web Tests with Selenium
 - [Introduction](#introduction)
 - [Technologies Used](#technologies-used)
 - [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
 
 ## Introduction
 
